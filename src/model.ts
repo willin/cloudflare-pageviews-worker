@@ -1,16 +1,16 @@
 import * as DB from 'worktop/kv';
 import type { KV } from 'worktop/kv';
 
-declare const VIEWS: KV.Namespace;
+declare let VIEWS: KV.Namespace;
 
 export interface PageView {
   slug: string;
   pv: number;
 }
 
-export async function find(slug: string): Promise<number> {
+export async function find(slug: string, add = true): Promise<number> {
   const result = await DB.read(VIEWS, slug, 'text');
-  const views = Number(result || 0) + 1;
+  const views = Number(result || 0) + (add ? 1 : 0);
   await DB.write(VIEWS, slug, `${views}`);
   return views;
 }

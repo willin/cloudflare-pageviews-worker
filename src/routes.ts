@@ -2,11 +2,12 @@ import type { Handler } from 'worktop';
 import { find, list, PageView } from './model';
 
 export const PV: Handler = async function PV(req, res) {
+  const needAdd = req.method !== 'GET';
   const slug = req.query.get('slug') || 'total';
-  const pv = await find(slug);
+  const pv = await find(slug, needAdd && slug !== 'total');
   // Total Pageviews
   if (slug !== 'total') {
-    await find('total');
+    await find('total', needAdd);
   }
 
   const result: PageView = {
