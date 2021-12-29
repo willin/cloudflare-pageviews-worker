@@ -21,3 +21,7 @@ export const List: Handler = async function List(req, res) {
   const result: PageView[] = await list(slugs);
   res.send(200, { result }, { 'cache-control': 'private,max-age=30' });
 };
+
+export const NoutFound: Handler = function NoutFound(req, res) {
+  res.send(301, {}, { location: 'https://willin.wang/' });
+};

@@ -1,14 +1,16 @@
-name = "willinwang-pageviews"
+name = "willinwang-pageviews-dev"
 type = "javascript"
 workers_dev = true
 compatibility_date = "2021-12-29"
 # Replace with yours, 替换成你的配置
 account_id = "96f10109ea482311a0fe5e42d6ea35f7"
-kv_namespaces = [
-    { binding = "VIEWS", id = "8256151f1f804596b202bf036c7fd8a9", preview_id = "8256151f1f804596b202bf036c7fd8a9" }
-]
+[[kv_namespaces]]
+binding = "VIEWS"
+id = "8256151f1f804596b202bf036c7fd8a9"
+preview_id = "7f55e08dc67340268796c95d0791607b"
 
 [env.prod]
+name = "willinwang-pageviews"
 workers_dev = false
 zone_id = "dc5443e1bf78f4f52ee37affba3b04bf"
 route = "pageviews.willin.wang/*"

@@ -26,4 +26,4 @@ wrangler kv:namespace create "views_dev"
 - account_id
 - zone_id
 - route
-- kv_namespaces 中的 id （填入 `views_prod` 的 id） 和 preview_id （填入 `views_dev` 的 id），或者共用一个存储桶
+- kv_namespaces 中的 id （填入 `views_prod` 的 id） 和 preview_id （填入 `views_dev` 的 id）

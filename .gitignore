@@ -4,3 +4,4 @@ transpiled
 /.idea/
 package-lock.json
 demo/
+coverage/
